@@ -13,35 +13,25 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <>
-      <Page
-        title="Next.js MDX Blog Theme"
-        description={
-          <>
-            <p>
-              View the source code on{" "}
-              <a href="https://github.com/alexcarpenter/nextjs-mdx-blog-theme">
-                Github
-              </a>
-              .
-            </p>
-          </>
-        }
-      >
-        <PostList posts={posts} />
-        <div className="mt-8">
-          <Link
-            passHref
-            href="/posts"
-            className="group inline-flex items-center gap-2 text-pink-600"
-          >
-            View more posts{" "}
-            <ArrowRight
-              className="group-hover:translate-x-0.5 transition-transform"
-              width={".9em"}
-            />
-          </Link>
-        </div>
-      </Page>
+      <div className="text-white font-bold text-xl md:text-3xl mt-8 md:mt-32">
+        A series of unrelated design and web-dev thoughts, documented.
+      </div>
+      <div className=" border-neutral-800 border-b-2 my-8"></div>
+      <PostList posts={posts} />
+      <div className="mt-8">
+        <Link
+          passHref
+          href="/posts"
+          className="group inline-flex items-center gap-2  text-neutral-800"
+        >
+          View more posts{" "}
+          <ArrowRight
+            className="group-hover:translate-x-0.5 transition-transform"
+            width={".9em"}
+          />
+        </Link>
+      </div>
+
     </>
   );
 };
@@ -50,7 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const mdxFiles = getAllMdx().map((post) => post["frontMatter"]);
   return {
     props: {
-      posts: mdxFiles.slice(0, 5),
+      posts: mdxFiles,
     },
   };
 };

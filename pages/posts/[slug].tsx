@@ -34,7 +34,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
             className={cx(
               "mt-8 pt-8 grid grid-cols-2 gap-8 border-t",
               "border-gray-200",
-              "dark:border-gray-700"
+              "dark:border-neutral-700"
             )}
           >
             {previous ? (
@@ -43,7 +43,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                   className={cx(
                     "mb-2 uppercase tracking-wider text-sm",
                     "text-gray-500",
-                    "dark:text-gray-400"
+                    "dark:text-neutral-400"
                   )}
                 >
                   Previous
@@ -59,7 +59,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
                   className={cx(
                     "mb-2 uppercase tracking-wider text-sm",
                     "text-gray-500",
-                    "dark:text-gray-400"
+                    "dark:text-neutral-400"
                   )}
                 >
                   Next

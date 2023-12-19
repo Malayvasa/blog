@@ -4,6 +4,8 @@ import { formatDate } from "@/lib/formatDate";
 import siteConfig from "@/data/siteConfig";
 import { Prose } from "@/components/Prose";
 import { cx } from "@/lib/utils";
+import Link from "next/link";
+import { ArrowLeft } from "react-feather";
 
 interface PageProps {
   date?: string;
@@ -42,20 +44,29 @@ export const Page: React.FC<PageProps> = ({
       </Head>
       <header
         className={cx(
-          "mb-8 pb-8 border-b",
+          "border-b pb-12 mb-8 mt-52",
           "border-gray-200",
-          "dark:border-gray-700"
+          "dark:border-neutral-700 text-neutral-400"
         )}
       >
+        <Link href="/">
+          <div className="flex gap-x-2 mb-4 ">
+            <ArrowLeft width={18} />
+            <div>Back</div>
+
+
+          </div>
+        </Link>
+
+        <h1 className="text-white font-bold text-3xl">{title}</h1>
         {date ? (
           <time
-            className={cx("block mb-2", "text-gray-500", "dark:text-gray-400")}
+            className={cx("block mt-2", "text-gray-500", "dark:text-neutral-400")}
           >
-            {formatDate(date)}
+            {formatDate(date, 'dd MMMM yyyy')}
           </time>
         ) : null}
-        <h1 className="font-bold text-3xl">{title}</h1>
-        {description ? (
+        {/* {description ? (
           <div className="mt-4">
             <Prose>
               {typeof description === "string" ? (
@@ -65,7 +76,7 @@ export const Page: React.FC<PageProps> = ({
               )}
             </Prose>
           </div>
-        ) : null}
+        ) : null} */}
       </header>
       {children}
     </>

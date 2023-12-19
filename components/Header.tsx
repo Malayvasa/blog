@@ -7,22 +7,11 @@ import { cx } from "@/lib/utils";
 export const Header: React.FC = () => {
   const { pathname } = useRouter();
   return (
-    <header className="py-8 flex justify-between items-center">
+    <header className="fixed right-0 left-0 w-full max-w-3xl mx-auto backdrop-blur-md py-4 my-4 px-4 bg-neutral-800 bg-opacity-80 rounded-md flex justify-between items-center">
       <Link href="/" className="font-bold">
-        {siteConfig.avatar ? (
-          <span className="flex">
-            <Image
-              className="rounded-md"
-              src={siteConfig.avatar}
-              width={48}
-              height={48}
-              alt={siteConfig.siteName}
-              priority
-            />
-          </span>
-        ) : (
+        {
           siteConfig.siteName
-        )}
+        }
       </Link>
 
       <nav>

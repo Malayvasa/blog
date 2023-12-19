@@ -15,7 +15,7 @@ class MyDocument extends Document {
         <body
           className={cx(
             "bg-gray-50 text-gray-800",
-            "dark:bg-gray-900 dark:text-gray-50"
+            "dark: bg-neutral-900 dark:text-neutral-400"
           )}
         >
           <Main />
